@@ -12,19 +12,16 @@ export class Layout extends Component {
   constructor (props, context) {
     super(props, context)
     this.state = {
-      selectedDay: new Date(new Date().setHours(0, 0, 0, 0))
-        .toISOString(),
-      activeSection: 'day',
-      loading: true
+      loading: true,
+      tacoPlaces: []
     }
   }
 
   componentDidMount () {
-    const date = this.state.selectedDay.substring(0, 10)
-    this.updateDataFor(date)
+    this.updateData()
   }
 
-  updateDataFor (date) {
+  updateData () {
     this.ref = base.fetch(`alexprice/${date}`, {
       context: this,
       asArray: true,
