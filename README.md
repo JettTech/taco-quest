@@ -1,12 +1,11 @@
-### Time journaling, visualized.
-![Title](http://i.imgur.com/tMpCZ4n.png)
-![Key](http://i.imgur.com/biDTHlz.png)
-![Log](http://i.imgur.com/CtSPI2T.png)
-
-
 ## Launching a development environment
-1. Install the Firebase CLI tools
-2. Add the /config directory to root
-3. Run `firebase serve`
-4. Different window, run `yarn run dev`
-5. Profit
+1. cd over to this project directory
+2. Run `npm i`
+3. Run `npm i -g firebase-tools`
+4. Wait for that to finish up
+5. Run `firebase login`
+6. Login with the browser window that pops up. Make sure you’re authenticated for the Taco Quest app. Talk to Kim.
+7. Run `firebase serve`. You’re now running the DB locally. Awesome!
+8. Next, run `yarn run dev` in another terminal window, same directory.
+> If you get an error (yarn not installed), run `brew install yarn`, let it install yarn, then try again. Installation should take a couple minutes.
+9. Profit!
