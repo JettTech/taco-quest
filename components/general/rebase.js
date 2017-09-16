@@ -4,9 +4,9 @@ import Rebase from 're-base'
 
 const config = {
   apiKey: apiKey,
-  authDomain: 'gel-fb.firebaseio.com',
-  databaseURL: 'https://gel-fb.firebaseio.com',
-  projectId: 'gel-fb'
+  authDomain: 'taco-quest.firebaseio.com',
+  databaseURL: 'https://taco-quest.firebaseio.com',
+  projectId: 'taco-quest'
 }
 
 if (!firebase.apps.length) {

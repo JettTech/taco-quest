@@ -25,11 +25,12 @@ export class Layout extends Component {
   }
 
   updateDataFor (date) {
-    this.ref = base.fetch(`alexprice/${date}`, {
+    this.ref = base.fetch(`nguyenkimsagmailcom`, {
       context: this,
-      asArray: true,
+      asArray: false,
       state: `timeline_${date}`,
       then: (data) => {
+      	console.info(data)	
         this.setState({
           loading: false,
           [`timeline_${date}`]: data
@@ -55,7 +56,6 @@ export class Layout extends Component {
           updateDate={(selectedDay) => {
             this.updateDataFor(selectedDay.substring(0, 10))
             this.setState({ selectedDay })
-            console.info(this.state)
           }}
         />
       )
