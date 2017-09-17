@@ -15,9 +15,10 @@ export class Leaderboard extends Component {
     } = this.props
 
     let renderedTacoPlaces = (tacoPlaces)
-      ? renderedTacoPlaces = tacoPlaces.map((place) => {
+      ? renderedTacoPlaces = tacoPlaces.map((place, i) => {
+        console.debug(place)
         return <Location key={place.id}
-          stars={place.stars}
+          rank={i + 1}
           name={place.name}
           // distance={...}
         />
@@ -26,7 +27,7 @@ export class Leaderboard extends Component {
 
     return (
       <section className='leaderboard'>
-        LEADERBOARD
+        <b>LEADERBOARD</b>
         {renderedTacoPlaces}
       </section>
     )
