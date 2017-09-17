@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Location from '../location'
+import Challenge from '../challenge'
 
 export class Leaderboard extends Component {
   constructor (props, context) {
@@ -28,6 +29,7 @@ export class Leaderboard extends Component {
     return (
       <section className='leaderboard'>
         <b>LEADERBOARD</b>
+        <Challenge />
         {renderedTacoPlaces}
       </section>
     )

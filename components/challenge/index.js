@@ -1,6 +1,4 @@
 import { Component } from 'react'
-import button from '../general/button.js'
-import ReactDOM from "react-dom";
 
 export class Challenge extends Component {
   constructor (props, context) {
@@ -23,18 +21,24 @@ export class Challenge extends Component {
   render () {
     if (this.state.section === 'new') {
       return (
-        <section className=''>
+        <section className='challenge--new'>
           <img />
-          <p>
-            "Will You Taco Down?"
-          <p/>
+          <p>Will You Taco Down?</p>
+
           <div>
-            <Button onClick={onClickAccept}
-              title="Accept"
-              accessibilityLabel="Accept the Taco Challenge by pressing this button"/>
-            <Button onClick={onClickDeny}
-              title="Deny"
-              accessibilityLabel= "Deny the Taco Challenge by pressing this button" />
+            <div className='button' onClick={() => {
+              // todo: add challenge to user
+              this.setState({
+                section: 'active'
+              })
+            }}
+              title='Accep'
+              accessibilityLabel='Accept the Taco Challenge by pressing this button' />
+            <div className='button' onClick={() => {
+              this.refreshOptions()
+            }}
+              title='Refresh'
+              accessibilityLabel='Get a new Taco Challenge by pressing this button' />
           </div>
         </section>
       )
@@ -45,3 +49,5 @@ export class Challenge extends Component {
     }
   }
 }
+
+export default Challenge
