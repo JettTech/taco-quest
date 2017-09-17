@@ -1,4 +1,6 @@
 import { Component } from 'react'
+import Style from '../general/style'
+import sheet from './challenge.scss'
 
 export class Challenge extends Component {
   constructor (props, context) {
@@ -22,6 +24,7 @@ export class Challenge extends Component {
     if (this.state.section === 'new') {
       return (
         <section className='challenge--new'>
+          <Style sheet={sheet} />
           <img />
           <p>Will You Taco Down?</p>
 
@@ -32,7 +35,7 @@ export class Challenge extends Component {
                 section: 'active'
               })
             }}
-              title='Accep'
+              title='Accept'
               accessibilityLabel='Accept the Taco Challenge by pressing this button' />
             <div className='button' onClick={() => {
               this.refreshOptions()
@@ -43,9 +46,19 @@ export class Challenge extends Component {
         </section>
       )
     } else if (this.state.section === 'active') {
-      return (<div>Active challenge screen</div>)
+      return (
+        <section className='challenge--active'>
+          <Style sheet={sheet} />
+          Active challenge screen
+        </section>
+      )
     } else {
-      return (<div>Start a new challenge screen</div>)
+      return (
+        <section className='challenge--none'>
+          <Style sheet={sheet} />
+          Start a new challenge screen
+        </section>
+      )
     }
   }
 }

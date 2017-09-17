@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { CLIENT_ID, CLIENT_SECRET } from '../config/foursquare-keys.js'
+import Challenge from '../components/challenge'
 import axios from 'axios'
 import _ from 'lodash'
 
@@ -120,6 +121,7 @@ export class Layout extends Component {
       return (
         <main>
           <Style sheet={sheet} />
+          <Challenge />
           <Leaderboard tacoPlaces={tacoPlaces} />
         </main>
       )

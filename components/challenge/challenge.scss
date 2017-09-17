@@ -1,0 +1,11 @@
+@import '../vars';
+@import '../mixins';
+
+.challenge--new, .challenge--none, .challenge--active {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2em;
+}
