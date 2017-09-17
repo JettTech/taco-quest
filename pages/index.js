@@ -6,8 +6,6 @@ import base from '../components/general/rebase'
 import Loader from '../components/general/loader'
 import Style from '../components/general/style'
 import sheet from '../components/base.scss'
-import Week from '../components/week/week'
-import Day from '../components/day/day'
 
 export class Layout extends Component {
   constructor (props, context) {
