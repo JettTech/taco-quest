@@ -19,6 +19,7 @@ export class Challenge extends Component {
     return [firstContender, secondContender]
   }
   render (){
+
     <section className=''>
       <img/>
       <p>
