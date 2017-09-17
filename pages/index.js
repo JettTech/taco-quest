@@ -3,6 +3,7 @@ import { CLIENT_ID, CLIENT_SECRET } from '../config/foursquare-keys.js'
 import axios from 'axios'
 import _ from 'lodash'
 
+import Leaderboard from '../components/leaderboard'
 import base from '../components/general/rebase'
 import Style from '../components/general/style'
 import sheet from '../components/base.scss'
@@ -20,17 +21,7 @@ export class Layout extends Component {
   componentDidUpdate () {
     const { loading, tacoPlaces } = this.state
     if (loading && tacoPlaces) {
-      const scoredPlaces = tacoPlaces.map(place => {
-        let newPlace = place
-        newPlace.score = this.getLocationScore(place.id)
-        return newPlace
-      })
 
-      const sortedPlaces = _.sortBy(scoredPlaces, ['score'])
-      this.setState({
-        sortedPlaces,
-        loading: false
-      })
     }
   }
 
@@ -80,15 +71,20 @@ export class Layout extends Component {
     const url = `https://api.foursquare.com/v2/venues/search?ll=${latitude},${longitude}&categoryId=4bf58dd8d48988d151941735&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=20170916`
 
     axios.get(url).then((res) => {
-      console.debug(res.data.response.venues)
-      this.setState({
-        tacoPlaces
+      const unsorted = res.data.response.venues
+      const scoredPlaces = unsorted.map(place => {
+        let newPlace = place
+        newPlace.score = this.getLocationScore(place.id)
+        return newPlace
       })
-    }).catch((err) => {
-      console.warn(err)
-    })
 
-    // TODO: sort by deliciousness
+      const sortedPlaces = _.sortBy(scoredPlaces, ['score'])
+
+      this.setState({
+        tacoPlaces: sortedPlaces,
+        loading: false
+      })
+    }).catch((err) => console.error(err))
   }
 
   render () {
@@ -106,7 +102,7 @@ export class Layout extends Component {
         <main>
           <header>
             <h1>Taco Quest</h1>
-            Kim really digs {user.favorite}.
+            <Leaderboard tacoPlaces={this.state.tacoPlaces} />
             <Style sheet={sheet} />
           </header>
         </main>
