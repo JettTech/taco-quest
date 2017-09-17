@@ -4,11 +4,11 @@
 @import 'animations';
 
 body {
-  background: $black;
-  color: $white;
+  background: $white;
+  color: $black;
   -webkit-font-smoothing: subpixel-antialiased;
   font: 16px/20px $base-font-family;
-  padding: 4em 10vw;
+  padding: 0;
   font-weight: 400;
 
   display: flex;

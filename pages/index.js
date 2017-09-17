@@ -64,6 +64,24 @@ export class Layout extends Component {
     console.debug('userData = ', userData)
   }
 
+  async getLocationScore (locationId) {
+    const score = await base.fetch(`location-scores/${locationId}`, {
+      context: this,
+      asArray: false,
+      then: (response) => response
+    })
+
+    if (score) return score
+    else {
+      const defaultScore = 0
+      base.push('location-scores', {
+        data: { [locationId]: defaultScore }
+      }).catch(err => console.error(err))
+
+      return defaultScore
+    }
+  }
+
   // pass in longitude and latitude to push all local taco places to state.
   updateTacoData (position) {
     const latitude = position.coords.latitude
@@ -90,21 +108,19 @@ export class Layout extends Component {
   render () {
     const {
       user,
-      loading
+      loading,
+      tacoPlaces
     } = this.state
 
     if (loading) {
-      return (<main>LOADING</main>)
+      return (<main>Loading...</main>)
     }
 
     if (user) {
       return (
         <main>
-          <header>
-            <h1>Taco Quest</h1>
-            <Leaderboard tacoPlaces={this.state.tacoPlaces} />
-            <Style sheet={sheet} />
-          </header>
+          <Style sheet={sheet} />
+          <Leaderboard tacoPlaces={tacoPlaces} />
         </main>
       )
     } else {
