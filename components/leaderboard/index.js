@@ -1,65 +1,36 @@
 import React, { Component } from 'react'
-import base from '../general/rebase'
 import Location from '../location'
 
 export class Leaderboard extends Component {
   constructor (props, context) {
     super(props, context)
     this.state = {
-      sortedPlaces: [],
-      loading: true
-    }
-  }
-
-  async getLocationScore (locationId) {
-    const score = await base.fetch(`location-scores/${locationId}`, {
-      context: this,
-      asArray: false,
-      then: (response) => response
-    })
-
-    if (score) return score
-    else {
-      const defaultScore = 0
-      base.push('location-scores', {
-        data: { [locationId]: defaultScore }
-      }).catch(err => console.error(err))
-
-      return defaultScore
-    }
-  }
-
-  componentWillReceiveProps (nextProps) {
-    if (this.state.loading && nextProps.sortedPlaces) {
-      this.setState({
-        tacoPlaces: nextProps.sortedPlaces,
-        loading: false
-      })
+      sortedPlaces: []
     }
   }
 
   render () {
     const {
-      loading,
       tacoPlaces
-    } = this.state
+    } = this.props
 
-    if (loading) {
-      return (<div>LOADING</div>)
-    } else {
-      const renderedTacoPlaces = tacoPlaces.map((place) => {
+    let renderedTacoPlaces = (tacoPlaces)
+      ? renderedTacoPlaces = tacoPlaces.map((place, i) => {
+        console.debug(place)
         return <Location key={place.id}
-          stars={place.stars}
+          rank={i + 1}
           name={place.name}
           // distance={...}
         />
       })
-      return (
-        <section className='leaderboard'>
-          {renderedTacoPlaces}
-        </section>
-      )
-    }
+      : <div>No taco places :(</div>
+
+    return (
+      <section className='leaderboard'>
+        <b>LEADERBOARD</b>
+        {renderedTacoPlaces}
+      </section>
+    )
   }
 }
 

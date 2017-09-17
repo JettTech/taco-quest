@@ -4,7 +4,7 @@ import Rebase from 're-base'
 
 const config = {
   apiKey: apiKey,
-  authDomain: 'taco-quest.firebaseio.com',
+  authDomain: 'taco-quest.firebaseapp.com',
   databaseURL: 'https://taco-quest.firebaseio.com',
   projectId: 'taco-quest'
 }
