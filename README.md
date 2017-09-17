@@ -9,3 +9,5 @@
 8. Next, run `yarn run dev` in another terminal window, same directory.
 > If you get an error (yarn not installed), run `brew install yarn`, let it install yarn, then try again. Installation should take a couple minutes.
 9. Profit!
+
+[Open the Figma file here.](https://www.figma.com/file/0uyKTBiuJJS50Gt4WfFtnwLz/Taco-Quest)

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import _ from 'lodash'
 
 import base from '../general/rebase'
 import Location from '../location'
@@ -14,7 +13,7 @@ export class Leaderboard extends Component {
   }
 
   async getLocationScore (locationId) {
-    const score = await base.fetch(`location-score/${locationId}`, {
+    const score = await base.fetch(`location-scores/${locationId}`, {
       context: this,
       asArray: false,
       then: (response) => response
@@ -22,7 +21,12 @@ export class Leaderboard extends Component {
 
     if (score) return score
     else {
-      console.info('This Score Does Not Exist')
+      const defaultScore = 0
+      base.push('location-scores', {
+        data: { [locationId]: defaultScore }
+      }).catch(err => console.error(err))
+
+      return defaultScore
     }
   }
 
