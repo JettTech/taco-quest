@@ -1,0 +1,153 @@
+{
+  "location-scores" : {
+    "412bd680f964a520b50c1fe3" : {
+      "happy" : 4,
+      "neutral" : 2,
+      "sad" : 4
+    },
+    "43825f80f964a520f22a1fe3" : {
+      "happy" : 2,
+      "neutral" : 3,
+      "sad" : 5
+    },
+    "45fd161af964a52076441fe3" : {
+      "happy" : 7,
+      "neutral" : 3,
+      "sad" : 0
+    },
+    "49be75ccf964a520ad541fe3" : {
+      "happy" : 6,
+      "neutral" : 3,
+      "sad" : 1
+    },
+    "49c6c91ff964a5207c571fe3" : {
+      "happy" : 6,
+      "neutral" : 0,
+      "sad" : 4
+    },
+    "49ee1e97f964a52025681fe3" : {
+      "happy" : 3,
+      "neutral" : 2,
+      "sad" : 5
+    },
+    "49ee1ef0f964a52026681fe3" : {
+      "happy" : 9,
+      "neutral" : 1,
+      "sad" : 0
+    },
+    "4a46566df964a520b4a81fe3" : {
+      "happy" : 5,
+      "neutral" : 4,
+      "sad" : 1
+    },
+    "4a99bd43f964a520313020e3" : {
+      "happy" : 6,
+      "neutral" : 0,
+      "sad" : 4
+    },
+    "4adf741cf964a520b47a21e3" : {
+      "happy" : 9,
+      "neutral" : 1,
+      "sad" : 0
+    },
+    "4af0dcebf964a520bcdf21e3" : {
+      "happy" : 6,
+      "neutral" : 2,
+      "sad" : 2
+    },
+    "4b4e4060f964a520dee626e3" : {
+      "happy" : 7,
+      "neutral" : 1,
+      "sad" : 2
+    },
+    "4bb3d8d72397b713efb438b3" : {
+      "happy" : 4,
+      "neutral" : 1,
+      "sad" : 5
+    },
+    "4c7baea1df08a1cd0117e15d" : {
+      "happy" : 6,
+      "neutral" : 2,
+      "sad" : 2
+    },
+    "4cb4891eef1b3704c7975900" : {
+      "happy" : 5,
+      "neutral" : 0,
+      "sad" : 5
+    },
+    "4d8d295fc1b1721e798b1246" : {
+      "happy" : 2,
+      "neutral" : 5,
+      "sad" : 3
+    },
+    "4d9cef787509b1f7bbe335a0" : {
+      "happy" : 6,
+      "neutral" : 3,
+      "sad" : 1
+    },
+    "4df6859e1f6e94c2c77d0809" : {
+      "happy" : 7,
+      "neutral" : 2,
+      "sad" : 1
+    },
+    "512fbf18e4b0bb78ce07be5c" : {
+      "happy" : 5,
+      "neutral" : 2,
+      "sad" : 3
+    },
+    "518d264f498e1fbf0b642c75" : {
+      "happy" : 5,
+      "neutral" : 0,
+      "sad" : 5
+    },
+    "52096e3111d2c029695decb6" : {
+      "happy" : 1,
+      "neutral" : 4,
+      "sad" : 5
+    },
+    "5366633b498e90c683f58db7" : {
+      "happy" : 4,
+      "neutral" : 3,
+      "sad" : 3
+    },
+    "541da370498ebd85fa9c6196" : {
+      "happy" : 2,
+      "neutral" : 5,
+      "sad" : 3
+    },
+    "546d278a498e07a89f3b8299" : {
+      "happy" : 3,
+      "neutral" : 4,
+      "sad" : 3
+    },
+    "54d80fd6498ee14c523472f2" : {
+      "happy" : 4,
+      "neutral" : 1,
+      "sad" : 5
+    },
+    "56840058498ea2caaa240ff1" : {
+      "happy" : 6,
+      "neutral" : 3,
+      "sad" : 1
+    },
+    "57694abecd103faa1d84044f" : {
+      "happy" : 0,
+      "neutral" : 5,
+      "sad" : 5
+    },
+    "5819e179c278a62fb903ee31" : {
+      "happy" : 5,
+      "neutral" : 3,
+      "sad" : 2
+    },
+    "58d561532a198258360589c8" : {
+      "happy" : 7,
+      "neutral" : 2,
+      "sad" : 1
+    }
+  },
+  "nguyenkimsagmailcom" : {
+    "email" : "nguyen.kimsa@gmail.com",
+    "favorite" : "Ken's tacos"
+  }
+}
