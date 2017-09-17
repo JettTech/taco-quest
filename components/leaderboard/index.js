@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import _ from 'lodash'
+
 import base from '../general/rebase'
 import Location from '../location'
 
