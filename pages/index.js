@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import { CLIENT_ID, CLIENT_SECRET } from '../config/foursquare-keys.js'
 import axios from 'axios'
+import _ from 'lodash'
 
 import base from '../components/general/rebase'
-import Loader from '../components/general/loader'
 import Style from '../components/general/style'
 import sheet from '../components/base.scss'
-import Week from '../components/week/week'
-import Day from '../components/day/day'
 
 export class Layout extends Component {
   constructor (props, context) {
@@ -16,7 +14,23 @@ export class Layout extends Component {
       user: null,
       loading: true,
       tacoPlaces: []
-      
+    }
+  }
+
+  componentDidUpdate () {
+    const { loading, tacoPlaces } = this.state
+    if (loading && tacoPlaces) {
+      const scoredPlaces = tacoPlaces.map(place => {
+        let newPlace = place
+        newPlace.score = this.getLocationScore(place.id)
+        return newPlace
+      })
+
+      const sortedPlaces = _.sortBy(scoredPlaces, ['score'])
+      this.setState({
+        sortedPlaces,
+        loading: false
+      })
     }
   }
 
@@ -76,7 +90,7 @@ export class Layout extends Component {
 
     // TODO: sort by deliciousness
   }
-  
+
   render () {
     const {
       user,
