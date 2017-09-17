@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import base from '../general/rebase'
 import Location from '../location'
 
@@ -31,17 +30,9 @@ export class Leaderboard extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (this.state.loading && nextProps.tacoPlaces) {
-      const scoredPlaces = nextProps.tacoPlaces.map(place => {
-        let newPlace = place
-        newPlace.score = this.getLocationScore(place.id)
-        return newPlace
-      })
-
-      const sortedPlaces = _.sortBy(scoredPlaces, ['score'])
-
+    if (this.state.loading && nextProps.sortedPlaces) {
       this.setState({
-        sortedPlaces,
+        tacoPlaces: nextProps.sortedPlaces,
         loading: false
       })
     }
@@ -71,3 +62,5 @@ export class Leaderboard extends Component {
     }
   }
 }
+
+export default Leaderboard
